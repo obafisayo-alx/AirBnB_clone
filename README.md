@@ -6,8 +6,8 @@
 * [0x02 Environment](#0x02-Environment)
 * [0x03 Installation](#0x03-Installation)
 * [0x04 Testing](#0x04-Testing)
-* [0x04 Authors](#0x06-Authors)
-<!-- * [0x05 Usage](#0x05-Usage) -->
+* [0x05 Usage/Examples](#0x05-Usage/Examples)
+* [0x06 Authors](#0x06-Authors)
 
 ## 0x01 Introduction
 
@@ -164,6 +164,10 @@ To run the tests in non-interactive mode, and discover all the test, you can use
 ```bash
 python3 -m unittest discover tests
 ```
+
+## 0x05 Usage
+coming soon ✨✨ <br/>
+lol
 
 ## Authors
 <details>
