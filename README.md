@@ -165,11 +165,11 @@ To run the tests in non-interactive mode, and discover all the test, you can use
 python3 -m unittest discover tests
 ```
 
-## 0x05 Usage
+## 0x05 Usage/Examples
 coming soon ✨✨ <br/>
 lol
 
-## Authors
+## 0x06 Authors
 <details>
     <summary>Obafisayo Abimbola</summary>
     <ul>
