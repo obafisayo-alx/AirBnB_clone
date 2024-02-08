@@ -21,17 +21,22 @@ class TestBaseModel(unittest.TestCase):
         # Test if '__class__' key contains correct class name
         self.assertEqual(obj_dict['__class__'], 'BaseModel')
 
-        # Test if 'created_at' and 'updated_at' values are ISO formatted strings
+        # Test if 'created_at' and 'updated_at'
+        # values are ISO formatted strings
         self.assertTrue(isinstance(obj_dict['created_at'], str))
         self.assertTrue(isinstance(obj_dict['updated_at'], str))
 
-        # Test if 'created_at' and 'updated_at' strings are valid datetime strings
-        created_at = datetime.strptime(obj_dict['created_at'], '%Y-%m-%dT%H:%M:%S,%f')
-        updated_at = datetime.strptime(obj_dict['updated_at'], '%Y-%m-%dT%H:%M:%S,%f')
+        # Test if 'created_at' and 'updated_at' strings are
+        # valid datetime strings
+        created_at = datetime.strptime(obj_dict['created_at'],
+                                       '%Y-%m-%dT%H:%M:%S.%f')
+        updated_at = datetime.strptime(obj_dict['updated_at'],
+                                       '%Y-%m-%dT%H:%M:%S.%f')
         self.assertTrue(isinstance(created_at, datetime))
         self.assertTrue(isinstance(updated_at, datetime))
 
-        # Test if 'created_at' and 'updated_at' values are the same as BaseModel object's attributes
+        # Test if 'created_at' and 'updated_at' values are the same as
+        # BaseModel object's attributes
         self.assertEqual(created_at, self.base_model.created_at)
         self.assertEqual(updated_at, self.base_model.updated_at)
 
@@ -42,6 +47,7 @@ class TestBaseModel(unittest.TestCase):
         self.base_model.save()
         new_updated_at = self.base_model.updated_at
         self.assertNotEqual(old_updated_at, new_updated_at)
+
 
 if __name__ == "__main__":
     unittest.main()
