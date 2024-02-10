@@ -15,7 +15,7 @@ class TestFileStorage(unittest.TestCase):
     def tearDown(self) -> None:
         """Tear down test envirnoment"""
         try:
-            os.remove("AirBnB_clone/file.json")
+            os.remove("file.json")
         except FileNotFoundError:
             pass
 

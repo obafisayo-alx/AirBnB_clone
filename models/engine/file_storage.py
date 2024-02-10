@@ -9,7 +9,7 @@ class FileStorage:
     deserializes JSON file to instances
     """
 
-    __file_path = "AirBnB_clone/file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
