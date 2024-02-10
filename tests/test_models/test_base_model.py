@@ -11,13 +11,13 @@ class TestBaseModel(unittest.TestCase):
     def setUpClass(cls):
         """Set up test environment."""
         # Create the file.json file before running the tests
-        open("AirBnB_clone/file.json", "w").close()
+        open("file.json", "w").close()
 
     @classmethod
     def tearDownClass(cls):
         """Tear down test environment."""
         # Remove the file.json file after running the tests
-        os.remove("AirBnB_clone/file.json")
+        os.remove("file.json")
 
     def setUp(self) -> None:
         """Set up a BaseModel object for testing."""
