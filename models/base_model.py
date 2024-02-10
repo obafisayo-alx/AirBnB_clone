@@ -4,12 +4,13 @@
 
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
     """BaseModel of the airbnb project"""
     def __init__(self, *args, **kwargs) -> None:
-        """Initializes the basemodel to assign the `id`,
+        """Initializes the BaseModel to assign the `id`,
             `created_at` and `updated_at` time-stamp
         """
         if kwargs:
@@ -25,6 +26,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self) -> str:
         """Returns a simple string representation of the instance created"""
@@ -34,6 +36,7 @@ class BaseModel:
     def save(self):
         """Saves the instance by updating the `updated_at` time-stamp"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """To convert the attributes of the object into a dictionary format"""
