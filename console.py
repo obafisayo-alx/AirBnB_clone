@@ -17,8 +17,8 @@ class HBNBCommand(cmd.Cmd):
     """Command interpreter for HBNB project"""
 
     prompt = "(hbnb) "
-    __valid_args = ["BaseModel", "User", "Review", "Amenity",
-                  "State", "Place", "City"]
+    __valid_args = ["BaseModel",
+                    "User", "Review", "Amenity", "State", "Place", "City"]
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel"""
