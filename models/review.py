@@ -2,6 +2,7 @@
 """A Review class module"""
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """a review representation
 
@@ -12,5 +13,5 @@ class Review(BaseModel):
     """
 
     place_id = ""
-    text = ""
     user_id = ""
+    text = ""
