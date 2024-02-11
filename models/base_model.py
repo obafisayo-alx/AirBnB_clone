@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """This module contains the base class `BaseModel`"""
-
-
 import uuid
 from datetime import datetime
 import models
@@ -10,11 +8,16 @@ import models
 class BaseModel:
     """BaseModel of the airbnb project"""
     def __init__(self, *args, **kwargs) -> None:
-        """Initializes the BaseModel to assign the `id`,
-            `created_at` and `updated_at` time-stamp
+        """Initialize a new BaseModel.
+        
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
         """
-        if kwargs:
-            # Initialize instance attr from kwargs
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
+        if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ('created_at', 'updated_at'):
@@ -23,9 +26,6 @@ class BaseModel:
                     else:
                         setattr(self, key, value)
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self) -> str:
@@ -35,7 +35,7 @@ class BaseModel:
 
     def save(self):
         """Saves the instance by updating the `updated_at` time-stamp"""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.today()
         models.storage.save()
 
     def to_dict(self):
