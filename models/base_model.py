@@ -9,7 +9,7 @@ class BaseModel:
     """BaseModel of the airbnb project"""
     def __init__(self, *args, **kwargs) -> None:
         """Initialize a new BaseModel.
-        
+
         Args:
             *args (any): Unused.
             **kwargs (dict): Key/value pairs of attributes.
