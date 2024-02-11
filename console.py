@@ -17,7 +17,7 @@ class HBNBCommand(cmd.Cmd):
     """Command interpreter for HBNB project"""
 
     prompt = "(hbnb) "
-    valid_args = ["BaseModel", "User", "Review", "Amenity",
+    __valid_args = ["BaseModel", "User", "Review", "Amenity",
                   "State", "Place", "City"]
 
     def do_create(self, arg):
@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         class_name = args[0]
-        if class_name not in self.valid_args:
+        if class_name not in HBNBCommand.__valid_args:
             print("** class doesn't exist **")
             return
         new_instance = eval(f"{class_name}()")
@@ -41,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         class_name = args[0]
-        if class_name not in self.valid_args:
+        if class_name not in HBNBCommand.__valid_args:
             print("** class doesn't exist **")
             return
         if len(args) < 2:
@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         class_name = args[0]
-        if class_name not in self.valid_args:
+        if class_name not in HBNBCommand.__valid_args:
             print("** class doesn't exist **")
             return
         if len(args) < 2:
@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
             print([str(obj) for obj in objects.values()])
             return
         class_name = args[0]
-        if class_name not in self.valid_args:
+        if class_name not in HBNBCommand.__valid_args:
             print("** class doesn't exist **")
             return
         print([str(obj) for key, obj in objects.items()
@@ -98,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         class_name = args[0]
-        if class_name not in self.valid_args:
+        if class_name not in HBNBCommand.__valid_args:
             print("** class doesn't exist **")
             return
         if len(args) < 2:
