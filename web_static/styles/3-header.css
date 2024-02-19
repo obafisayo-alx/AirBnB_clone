@@ -1,10 +1,15 @@
 header {
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color: #ffffff;
+>>>>>>> c80b2fa0e22d5c6cd31cc98c655da3101ca1daca
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
 }
 
 header .logo {
@@ -13,3 +18,16 @@ header .logo {
     background: url("../images/logo.png") no-repeat center;
     padding-left: 20px;
 }
+=======
+} 
+
+header a{
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 60px;
+    width: 140px;
+    padding-left: 20px;
+}
+>>>>>>> c80b2fa0e22d5c6cd31cc98c655da3101ca1daca
